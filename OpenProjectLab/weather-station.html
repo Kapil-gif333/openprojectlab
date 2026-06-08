@@ -1,31 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Weather Station</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<header>
+<h1 class="project-title">Weather Station</h1>
+</header>
 
-<body>
-
-<header><h1>Weather Station</h1></header>
-
-<section>
-
-<h3>Components</h3>
+<section class="section">
+<h3>📦 Components</h3>
 <ul>
-<li>DHT11 sensor</li>
 <li>ESP8266</li>
+<li>DHT11 Sensor</li>
+<li>Jumper Wires</li>
 </ul>
+</section>
 
-<h3>Code</h3>
+<section class="section">
+<h3>🔌 Connections</h3>
+<table>
+<tr><th>Component</th><th>Pin</th></tr>
+<tr><td>DHT11 Data</td><td>D4</td></tr>
+<tr><td>VCC</td><td>3.3V</td></tr>
+<tr><td>GND</td><td>GND</td></tr>
+</table>
+</section>
 
+<section class="section">
+<h3>💻 Code</h3>
 <pre>
 #include <DHT.h>
 
-#define DHTPIN D4
-#define DHTTYPE DHT11
-
-DHT dht(DHTPIN, DHTTYPE);
+DHT dht(D4, DHT11);
 
 void setup(){
 Serial.begin(9600);
@@ -33,20 +34,8 @@ dht.begin();
 }
 
 void loop(){
-float t = dht.readTemperature();
-float h = dht.readHumidity();
-
-Serial.print("Temp:");
-Serial.println(t);
-
-Serial.print("Humidity:");
-Serial.println(h);
-
+Serial.println(dht.readTemperature());
 delay(2000);
 }
 </pre>
-
 </section>
-
-</body>
-</html>
