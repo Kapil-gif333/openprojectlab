@@ -35,79 +35,103 @@
 <input type="text" id="search" placeholder="Search projects...">
 </div>
 
+<!-- TABS -->
+<div class="tabs">
+<div class="tab active" onclick="filterCat('all')">All</div>
+<div class="tab" onclick="filterCat('arduino')">Arduino</div>
+<div class="tab" onclick="filterCat('robotics')">Robotics</div>
+<div class="tab" onclick="filterCat('iot')">IoT</div>
+</div>
+
 <!-- PROJECTS -->
 <section class="cards" id="projectList">
 
-<!-- REAL PROJECTS (YOU MADE) -->
-<div class="card">
+<!-- REAL PROJECTS -->
+
+<div class="card" data-cat="arduino">
 <h3>Smart Dustbin</h3>
 <a class="btn" href="smart-dustbin.html">Open</a>
 </div>
 
-<div class="card">
+<div class="card" data-cat="iot">
 <h3>Weather Station</h3>
 <a class="btn" href="weather-station.html">Open</a>
 </div>
 
-<div class="card">
+<div class="card" data-cat="robotics">
 <h3>Robot Arm</h3>
 <a class="btn" href="robot-arm.html">Open</a>
 </div>
 
-<div class="card">
+<div class="card" data-cat="robotics">
 <h3>Line Follower Robot</h3>
 <a class="btn" href="line-follower.html">Open</a>
 </div>
 
-<div class="card">
+<div class="card" data-cat="arduino">
 <h3>Fire Alarm System</h3>
 <a class="btn" href="fire-alarm.html">Open</a>
 </div>
 
-<!-- COMING SOON PROJECTS -->
-<div class="card">
+<!-- LOCKED PROJECTS -->
+
+<div class="card locked" data-cat="robotics">
 <h3>Obstacle Avoiding Robot</h3>
-<p>Coming Soon</p>
 </div>
 
-<div class="card">
+<div class="card locked" data-cat="arduino">
 <h3>Smart Irrigation System</h3>
-<p>Coming Soon</p>
 </div>
 
-<div class="card">
+<div class="card locked" data-cat="iot">
 <h3>Home Automation</h3>
-<p>Coming Soon</p>
 </div>
 
-<div class="card">
+<div class="card locked" data-cat="iot">
 <h3>WiFi Scanner ESP8266</h3>
-<p>Coming Soon</p>
 </div>
 
-<div class="card">
-<h3>ESP Weather API Advanced</h3>
-<p>Coming Soon</p>
-</div>
-
-<div class="card">
-<h3>Smart Door Lock System</h3>
-<p>Coming Soon</p>
+<div class="card locked" data-cat="iot">
+<h3>Smart Door Lock</h3>
 </div>
 
 </section>
 
-<!-- SEARCH SCRIPT -->
+<!-- SCRIPT -->
 <script>
-const search=document.getElementById("search");
+const search = document.getElementById("search");
+const cards = document.querySelectorAll(".card");
+const tabs = document.querySelectorAll(".tab");
 
-search.addEventListener("input",function(){
-let val=this.value.toLowerCase();
+// SEARCH FUNCTION (FIXED)
+search.addEventListener("input", function () {
+let val = this.value.toLowerCase();
 
-document.querySelectorAll(".card").forEach(card=>{
-card.style.display=card.innerText.toLowerCase().includes(val)?"block":"none";
+cards.forEach(card => {
+let text = card.innerText.toLowerCase();
+let match = text.includes(val);
+
+if (card.style.display !== "none") {
+card.style.display = match ? "block" : "none";
+}
 });
 });
+
+// CATEGORY FILTER
+function filterCat(cat){
+
+tabs.forEach(t=>t.classList.remove("active"));
+event.target.classList.add("active");
+
+cards.forEach(card=>{
+if(cat === "all"){
+card.style.display = "block";
+}
+else{
+card.style.display = card.dataset.cat === cat ? "block" : "none";
+}
+});
+}
 </script>
 
 </body>
