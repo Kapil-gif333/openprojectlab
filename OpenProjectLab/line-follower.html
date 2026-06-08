@@ -1,44 +1,43 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Line Follower</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<header>
+<h1 class="project-title">Line Follower Robot</h1>
+</header>
 
-<body>
+<section class="section">
+<h3>📦 Components</h3>
+<ul>
+<li>Arduino UNO</li>
+<li>IR Sensors</li>
+<li>Motor Driver L298N</li>
+</ul>
+</section>
 
-<header><h1>Line Follower Robot</h1></header>
+<section class="section">
+<h3>🔌 Connections</h3>
 
-<section>
+<table>
+<tr><th>Sensor</th><th>Pin</th></tr>
+<tr><td>Left Sensor</td><td>A0</td></tr>
+<tr><td>Right Sensor</td><td>A1</td></tr>
+<tr><td>Motor Left</td><td>D5</td></tr>
+<tr><td>Motor Right</td><td>D6</td></tr>
+</table>
+</section>
 
-<h3>Concept</h3>
-<p>Robot follows black line using IR sensors.</p>
-
-<h3>Code</h3>
+<section class="section">
+<h3>💻 Code</h3>
 
 <pre>
-int leftSensor = A0;
-int rightSensor = A1;
-
-void setup(){
-pinMode(leftSensor, INPUT);
-pinMode(rightSensor, INPUT);
-}
+int L = A0;
+int R = A1;
 
 void loop(){
-int left = analogRead(leftSensor);
-int right = analogRead(rightSensor);
-
-if(left < right){
-// turn left
+if(analogRead(L) > analogRead(R)){
+// left
 }
 else{
-// turn right
+// right
 }
 }
 </pre>
 
 </section>
-
-</body>
-</html>
