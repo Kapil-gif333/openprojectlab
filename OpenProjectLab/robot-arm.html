@@ -1,20 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Robot Arm</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<header>
+<h1 class="project-title">Robot Arm</h1>
+</header>
 
-<body>
+<section class="section">
+<h3>📦 Components</h3>
+<ul>
+<li>Arduino UNO</li>
+<li>Servo Motors (SG90)</li>
+<li>External Power Supply</li>
+</ul>
+</section>
 
-<header><h1>Robot Arm</h1></header>
+<section class="section">
+<h3>🔌 Connections</h3>
 
-<section>
+<table>
+<tr><th>Servo</th><th>Pin</th></tr>
+<tr><td>Base Servo</td><td>D9</td></tr>
+<tr><td>Arm Servo</td><td>D10</td></tr>
+<tr><td>Gripper Servo</td><td>D11</td></tr>
+</table>
+</section>
 
-<h3>Idea</h3>
-<p>Servo based robotic arm controlled by Arduino.</p>
-
-<h3>Code</h3>
+<section class="section">
+<h3>💻 Code</h3>
 
 <pre>
 #include <Servo.h>
@@ -28,16 +37,9 @@ s1.attach(9);
 void loop(){
 s1.write(0);
 delay(1000);
-
 s1.write(90);
-delay(1000);
-
-s1.write(180);
 delay(1000);
 }
 </pre>
 
 </section>
-
-</body>
-</html>
