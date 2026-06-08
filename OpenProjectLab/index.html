@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OpenProjectLab</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -10,7 +8,6 @@
 <body>
 
 <header>
-
 <div class="logo">
 <h1>OpenProjectLab</h1>
 <p>Created by Kapil</p>
@@ -23,58 +20,51 @@
 <li><a href="arduino.html">Arduino</a></li>
 <li><a href="robotics.html">Robotics</a></li>
 <li><a href="mechatronics.html">Mechatronics</a></li>
+<li><a href="contact.html">Contact</a></li>
 </ul>
 </nav>
-
 </header>
 
-<section class="hero">
+<div class="search-box">
+<input type="text" id="search" placeholder="Search projects...">
+</div>
 
-<h2>Learn Electronics, Robotics & Coding</h2>
-
-<p>Explore real projects with code, diagrams and tutorials.</p>
-
-<a class="btn" href="projects.html">Browse Projects</a>
-
-</section>
-
-<section>
-
-<h2 style="text-align:center;">Featured Projects</h2>
-
-<div class="cards">
+<section class="cards" id="projectList">
 
 <div class="card">
 <h3>Smart Dustbin</h3>
-<p>Automatic dustbin using ultrasonic sensor.</p>
 <a class="btn" href="smart-dustbin.html">Open</a>
 </div>
 
 <div class="card">
 <h3>Weather Station</h3>
-<p>Live temperature & humidity monitor.</p>
 <a class="btn" href="weather-station.html">Open</a>
 </div>
 
 <div class="card">
 <h3>Robot Arm</h3>
-<p>Servo controlled robotic arm system.</p>
 <a class="btn" href="robot-arm.html">Open</a>
 </div>
 
 <div class="card">
 <h3>Line Follower</h3>
-<p>Autonomous line tracking robot.</p>
 <a class="btn" href="line-follower.html">Open</a>
-</div>
-
 </div>
 
 </section>
 
-<footer>
-<p>Created by Kapil • OpenProjectLab</p>
-</footer>
+<script>
+const search=document.getElementById("search");
+search.addEventListener("keyup",function(){
+let value=this.value.toLowerCase();
+let cards=document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+let text=card.innerText.toLowerCase();
+card.style.display=text.includes(value)?"block":"none";
+});
+});
+</script>
 
 </body>
 </html>
