@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Robot Arm</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header><h1>Robot Arm</h1></header>
+
+<section>
+
+<h3>Idea</h3>
+<p>Servo based robotic arm controlled by Arduino.</p>
+
+<h3>Code</h3>
+
+<pre>
+#include <Servo.h>
+
+Servo s1;
+
+void setup(){
+s1.attach(9);
+}
+
+void loop(){
+s1.write(0);
+delay(1000);
+
+s1.write(90);
+delay(1000);
+
+s1.write(180);
+delay(1000);
+}
+</pre>
+
+</section>
+
+</body>
+</html>
