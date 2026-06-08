@@ -1,0 +1,43 @@
+<header>
+<h1 class="project-title">Fire Alarm System</h1>
+</header>
+
+<section class="section">
+<h3>📦 Components</h3>
+<ul>
+<li>Arduino UNO</li>
+<li>MQ2 Smoke Sensor</li>
+<li>Buzzer</li>
+</ul>
+</section>
+
+<section class="section">
+<h3>🔌 Connections</h3>
+
+<table>
+<tr><th>Component</th><th>Pin</th></tr>
+<tr><td>MQ2 Sensor</td><td>A0</td></tr>
+<tr><td>Buzzer</td><td>D8</td></tr>
+</table>
+</section>
+
+<section class="section">
+<h3>💻 Code</h3>
+
+<pre>
+int sensor = A0;
+int buzzer = 8;
+
+void loop(){
+int value = analogRead(sensor);
+
+if(value > 400){
+digitalWrite(buzzer,HIGH);
+}
+else{
+digitalWrite(buzzer,LOW);
+}
+}
+</pre>
+
+</section>
