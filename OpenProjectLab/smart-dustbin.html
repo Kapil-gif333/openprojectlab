@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,21 +11,22 @@
 <body>
 
 <header>
+
 <h1>OpenProjectLab</h1>
 
 <nav>
 <a href="index.html">Home</a>
 <a href="projects.html">Projects</a>
 </nav>
+
 </header>
 
-<section>
+<section class="project-page">
 
 <h2>Smart Dustbin Project</h2>
 
 <p>
-An automatic dustbin that opens its lid when a hand comes near it.
-Uses an ultrasonic sensor and servo motor.
+Automatic dustbin that opens its lid when a hand is detected using ultrasonic sensing.
 </p>
 
 <h3>Components Required</h3>
@@ -34,32 +36,28 @@ Uses an ultrasonic sensor and servo motor.
 <li>HC-SR04 Ultrasonic Sensor</li>
 <li>Servo Motor SG90</li>
 <li>Jumper Wires</li>
-<li>Dustbin</li>
+<li>Dustbin Body</li>
 </ul>
 
 <h3>Connections</h3>
 
-<table border="1">
+<table>
 <tr>
 <th>Component</th>
 <th>Arduino Pin</th>
 </tr>
-
 <tr>
 <td>Trig</td>
 <td>D2</td>
 </tr>
-
 <tr>
 <td>Echo</td>
 <td>D3</td>
 </tr>
-
 <tr>
 <td>Servo Signal</td>
 <td>D9</td>
 </tr>
-
 </table>
 
 <h3>Arduino Code</h3>
@@ -79,7 +77,6 @@ void setup() {
 }
 
 void loop() {
-
   long duration;
   int distance;
 
@@ -95,7 +92,7 @@ void loop() {
 
   distance = duration * 0.034 / 2;
 
-  if(distance < 20) {
+  if (distance < 20) {
     lid.write(90);
     delay(2000);
     lid.write(0);
@@ -105,9 +102,11 @@ void loop() {
 }
 </pre>
 
-<h3>Project Cost</h3>
+<h3>Estimated Cost</h3>
 
-<p>Approximate Cost: ₹500 - ₹800</p>
+<p>₹500 - ₹800</p>
+
+<a class="btn" href="projects.html">← Back to Projects</a>
 
 </section>
 
