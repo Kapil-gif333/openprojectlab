@@ -25,8 +25,10 @@
 </nav>
 </header>
 
+<!-- SEARCH + VOICE -->
 <div class="search-box">
 <input type="text" id="search" placeholder="Search projects...">
+<button class="mic-btn" onclick="startVoice()">🎤</button>
 </div>
 
 <section class="cards" id="projectList">
@@ -53,17 +55,30 @@
 
 </section>
 
+<!-- SEARCH SCRIPT -->
 <script>
 const search=document.getElementById("search");
-search.addEventListener("keyup",function(){
-let value=this.value.toLowerCase();
-let cards=document.querySelectorAll(".card");
+search.addEventListener("input",function(){
+let val=this.value.toLowerCase();
+document.querySelectorAll(".card").forEach(card=>{
+card.style.display=card.innerText.toLowerCase().includes(val)?"block":"none";
+});
+});
 
-cards.forEach(card=>{
-let text=card.innerText.toLowerCase();
-card.style.display=text.includes(value)?"block":"none";
-});
-});
+/* VOICE SEARCH */
+function startVoice(){
+let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+recognition.lang="en-US";
+
+recognition.start();
+
+recognition.onresult=function(event){
+let text = event.results[0][0].transcript;
+document.getElementById("search").value=text;
+
+search.dispatchEvent(new Event("input"));
+};
+}
 </script>
 
 </body>
