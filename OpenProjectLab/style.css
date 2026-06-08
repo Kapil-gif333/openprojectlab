@@ -5,10 +5,10 @@ background:#0b1220;
 color:white;
 }
 
-/* HEADER APP STYLE */
+/* HEADER */
 header{
 background:#0f172a;
-padding:15px;
+padding:12px;
 position:sticky;
 top:0;
 z-index:10;
@@ -25,12 +25,12 @@ font-size:12px;
 opacity:0.7;
 }
 
-/* NAV (mobile app bottom feel on PC too) */
+/* NAV */
 nav ul{
 display:flex;
 gap:10px;
 list-style:none;
-padding:10px 0;
+padding:10px;
 overflow-x:auto;
 }
 
@@ -45,12 +45,15 @@ white-space:nowrap;
 
 /* SEARCH BAR */
 .search-box{
-padding:20px;
-text-align:center;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+padding:15px;
 }
 
 .search-box input{
-width:90%;
+width:70%;
 max-width:500px;
 padding:12px;
 border-radius:10px;
@@ -58,7 +61,16 @@ border:none;
 outline:none;
 }
 
-/* CARDS GRID */
+/* MICROPHONE BUTTON */
+.mic-btn{
+padding:12px;
+background:#38bdf8;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+/* CARDS */
 .cards{
 display:flex;
 flex-wrap:wrap;
@@ -67,7 +79,6 @@ gap:15px;
 padding:15px;
 }
 
-/* CARD STYLE (APP LIKE) */
 .card{
 background:#1e293b;
 width:160px;
@@ -80,7 +91,6 @@ transition:0.2s;
 transform:scale(1.05);
 }
 
-/* BUTTON */
 .btn{
 display:inline-block;
 margin-top:10px;
@@ -89,10 +99,9 @@ background:#38bdf8;
 color:black;
 border-radius:10px;
 text-decoration:none;
-font-size:14px;
 }
 
-/* FULL WIDTH ON MOBILE */
+/* MOBILE */
 @media(max-width:600px){
 .card{
 width:90%;
