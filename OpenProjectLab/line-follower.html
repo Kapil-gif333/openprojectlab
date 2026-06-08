@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Line Follower</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header><h1>Line Follower Robot</h1></header>
+
+<section>
+
+<h3>Concept</h3>
+<p>Robot follows black line using IR sensors.</p>
+
+<h3>Code</h3>
+
+<pre>
+int leftSensor = A0;
+int rightSensor = A1;
+
+void setup(){
+pinMode(leftSensor, INPUT);
+pinMode(rightSensor, INPUT);
+}
+
+void loop(){
+int left = analogRead(leftSensor);
+int right = analogRead(rightSensor);
+
+if(left < right){
+// turn left
+}
+else{
+// turn right
+}
+}
+</pre>
+
+</section>
+
+</body>
+</html>
