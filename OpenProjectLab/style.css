@@ -1,64 +1,95 @@
-body{
-font-family:Arial,sans-serif;
-margin:0;
-background:#0f172a;
-color:white;
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+background: #0f172a;
+color: white;
 }
 
-nav{
-display:flex;
-justify-content:space-between;
-padding:20px;
-background:#111827;
+/* NAVBAR */
+nav {
+display: flex;
+justify-content: space-between;
+padding: 20px;
+background: #111827;
 }
 
-nav ul{
-display:flex;
-list-style:none;
-gap:20px;
+nav ul {
+display: flex;
+list-style: none;
+gap: 20px;
 }
 
-nav a{
-color:white;
-text-decoration:none;
+nav a {
+color: white;
+text-decoration: none;
 }
 
-.hero{
-text-align:center;
-padding:80px 20px;
+/* HERO */
+.hero {
+text-align: center;
+padding: 80px 20px;
 }
 
-.hero input{
-width:60%;
-padding:15px;
-border-radius:10px;
-border:none;
+.hero input {
+width: 60%;
+padding: 15px;
+border-radius: 10px;
+border: none;
 }
 
-.projects{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-padding:30px;
+/* CARDS GRID */
+.cards {
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
+padding: 30px;
 }
 
-.card{
-background:#1e293b;
-padding:20px;
-width:250px;
-border-radius:15px;
+/* CARD */
+.card {
+background: #1e293b;
+padding: 20px;
+width: 250px;
+border-radius: 15px;
 }
 
-button{
-padding:10px 20px;
-border:none;
-border-radius:8px;
-cursor:pointer;
+/* BUTTON STYLE (FIXED) */
+.btn {
+display: inline-block;
+margin-top: 10px;
+padding: 10px 15px;
+background: #38bdf8;
+color: black;
+border-radius: 8px;
+text-decoration: none;
+font-weight: bold;
+transition: 0.2s;
 }
 
-footer{
-text-align:center;
-padding:20px;
-background:#111827;
+.btn:hover {
+background: #0ea5e9;
+transform: scale(1.05);
+}
+
+/* BUTTON (old compatibility) */
+button {
+padding: 10px 20px;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+text-align: center;
+padding: 20px;
+background: #111827;
+}
+
+/* MOBILE FIX */
+@media (max-width: 600px) {
+.hero input {
+width: 90%;
+}
 }
