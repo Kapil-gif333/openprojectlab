@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Dustbin - OpenProjectLab</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>OpenProjectLab</h1>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="projects.html">Projects</a>
+</nav>
+</header>
+
+<section>
+
+<h2>Smart Dustbin Project</h2>
+
+<p>
+An automatic dustbin that opens its lid when a hand comes near it.
+Uses an ultrasonic sensor and servo motor.
+</p>
+
+<h3>Components Required</h3>
+
+<ul>
+<li>Arduino Uno</li>
+<li>HC-SR04 Ultrasonic Sensor</li>
+<li>Servo Motor SG90</li>
+<li>Jumper Wires</li>
+<li>Dustbin</li>
+</ul>
+
+<h3>Connections</h3>
+
+<table border="1">
+<tr>
+<th>Component</th>
+<th>Arduino Pin</th>
+</tr>
+
+<tr>
+<td>Trig</td>
+<td>D2</td>
+</tr>
+
+<tr>
+<td>Echo</td>
+<td>D3</td>
+</tr>
+
+<tr>
+<td>Servo Signal</td>
+<td>D9</td>
+</tr>
+
+</table>
+
+<h3>Arduino Code</h3>
+
+<pre>
+#include <Servo.h>
+
+Servo lid;
+
+const int trigPin = 2;
+const int echoPin = 3;
+
+void setup() {
+  lid.attach(9);
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+}
+
+void loop() {
+
+  long duration;
+  int distance;
+
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+
+  digitalWrite(trigPin, LOW);
+
+  duration = pulseIn(echoPin, HIGH);
+
+  distance = duration * 0.034 / 2;
+
+  if(distance < 20) {
+    lid.write(90);
+    delay(2000);
+    lid.write(0);
+  }
+
+  delay(100);
+}
+</pre>
+
+<h3>Project Cost</h3>
+
+<p>Approximate Cost: ₹500 - ₹800</p>
+
+</section>
+
+</body>
+</html>
