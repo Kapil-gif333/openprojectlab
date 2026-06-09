@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Line Follower Robot - OpenProjectLab</title>
+<title>Fire Alarm System - OpenProjectLab</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -23,21 +23,20 @@
 
 <section class="project-page">
 
-<h2>Line Follower Robot</h2>
+<h2>Fire Alarm System</h2>
 
 <p>
-A robot that automatically follows a black line using IR sensors and DC motors.
+A simple fire alarm system using a flame sensor and buzzer to detect fire.
 </p>
 
 <h3>Components Required</h3>
 
 <ul>
 <li>Arduino Uno</li>
-<li>IR Sensor Module (2 Sensors)</li>
-<li>L298N Motor Driver</li>
-<li>2 DC Gear Motors</li>
-<li>Robot Chassis</li>
-<li>Battery Pack</li>
+<li>Flame Sensor Module</li>
+<li>Piezo Buzzer</li>
+<li>LED</li>
+<li>220Ω Resistor</li>
 <li>Jumper Wires</li>
 </ul>
 
@@ -51,33 +50,18 @@ A robot that automatically follows a black line using IR sensors and DC motors.
 </tr>
 
 <tr>
-<td>Left IR Sensor</td>
+<td>Flame Sensor OUT</td>
 <td>D2</td>
 </tr>
 
 <tr>
-<td>Right IR Sensor</td>
-<td>D3</td>
+<td>Buzzer</td>
+<td>D8</td>
 </tr>
 
 <tr>
-<td>L298N IN1</td>
-<td>D5</td>
-</tr>
-
-<tr>
-<td>L298N IN2</td>
-<td>D6</td>
-</tr>
-
-<tr>
-<td>L298N IN3</td>
-<td>D9</td>
-</tr>
-
-<tr>
-<td>L298N IN4</td>
-<td>D10</td>
+<td>LED</td>
+<td>D13</td>
 </tr>
 
 </table>
@@ -85,34 +69,33 @@ A robot that automatically follows a black line using IR sensors and DC motors.
 <h3>Arduino Code</h3>
 
 <pre>
-int leftSensor = 2;
-int rightSensor = 3;
+int flameSensor = 2;
+int buzzer = 8;
+int led = 13;
 
 void setup() {
 
-pinMode(leftSensor, INPUT);
-pinMode(rightSensor, INPUT);
-
-Serial.begin(9600);
+pinMode(flameSensor, INPUT);
+pinMode(buzzer, OUTPUT);
+pinMode(led, OUTPUT);
 
 }
 
 void loop() {
 
-int left = digitalRead(leftSensor);
-int right = digitalRead(rightSensor);
+int fire = digitalRead(flameSensor);
 
-if(left == LOW && right == LOW){
-Serial.println("Forward");
-}
-else if(left == LOW){
-Serial.println("Turn Left");
-}
-else if(right == LOW){
-Serial.println("Turn Right");
+if(fire == LOW){
+
+digitalWrite(buzzer, HIGH);
+digitalWrite(led, HIGH);
+
 }
 else{
-Serial.println("Stop");
+
+digitalWrite(buzzer, LOW);
+digitalWrite(led, LOW);
+
 }
 
 delay(100);
@@ -122,7 +105,7 @@ delay(100);
 
 <h3>Estimated Cost</h3>
 
-<p>₹800 - ₹1500</p>
+<p>₹250 - ₹600</p>
 
 <a class="btn" href="projects.html">← Back to Projects</a>
 
