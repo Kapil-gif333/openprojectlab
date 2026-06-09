@@ -1,43 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Line Follower Robot - OpenProjectLab</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
 <header>
-<h1 class="project-title">Line Follower Robot</h1>
+
+<h1>OpenProjectLab</h1>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="projects.html">Projects</a>
+</nav>
+
 </header>
 
-<section class="section">
-<h3>📦 Components</h3>
-<ul>
-<li>Arduino UNO</li>
-<li>IR Sensors</li>
-<li>Motor Driver L298N</li>
-</ul>
-</section>
+<section class="project-page">
 
-<section class="section">
-<h3>🔌 Connections</h3>
+<h2>Line Follower Robot</h2>
+
+<p>
+A robot that automatically follows a black line using IR sensors and DC motors.
+</p>
+
+<h3>Components Required</h3>
+
+<ul>
+<li>Arduino Uno</li>
+<li>IR Sensor Module (2 Sensors)</li>
+<li>L298N Motor Driver</li>
+<li>2 DC Gear Motors</li>
+<li>Robot Chassis</li>
+<li>Battery Pack</li>
+<li>Jumper Wires</li>
+</ul>
+
+<h3>Connections</h3>
 
 <table>
-<tr><th>Sensor</th><th>Pin</th></tr>
-<tr><td>Left Sensor</td><td>A0</td></tr>
-<tr><td>Right Sensor</td><td>A1</td></tr>
-<tr><td>Motor Left</td><td>D5</td></tr>
-<tr><td>Motor Right</td><td>D6</td></tr>
-</table>
-</section>
 
-<section class="section">
-<h3>💻 Code</h3>
+<tr>
+<th>Component</th>
+<th>Arduino Pin</th>
+</tr>
+
+<tr>
+<td>Left IR Sensor</td>
+<td>D2</td>
+</tr>
+
+<tr>
+<td>Right IR Sensor</td>
+<td>D3</td>
+</tr>
+
+<tr>
+<td>L298N IN1</td>
+<td>D5</td>
+</tr>
+
+<tr>
+<td>L298N IN2</td>
+<td>D6</td>
+</tr>
+
+<tr>
+<td>L298N IN3</td>
+<td>D9</td>
+</tr>
+
+<tr>
+<td>L298N IN4</td>
+<td>D10</td>
+</tr>
+
+</table>
+
+<h3>Arduino Code</h3>
 
 <pre>
-int L = A0;
-int R = A1;
+int leftSensor = 2;
+int rightSensor = 3;
 
-void loop(){
-if(analogRead(L) > analogRead(R)){
-// left
+void setup() {
+
+pinMode(leftSensor, INPUT);
+pinMode(rightSensor, INPUT);
+
+Serial.begin(9600);
+
+}
+
+void loop() {
+
+int left = digitalRead(leftSensor);
+int right = digitalRead(rightSensor);
+
+if(left == LOW && right == LOW){
+Serial.println("Forward");
+}
+else if(left == LOW){
+Serial.println("Turn Left");
+}
+else if(right == LOW){
+Serial.println("Turn Right");
 }
 else{
-// right
+Serial.println("Stop");
 }
+
+delay(100);
+
 }
 </pre>
 
+<h3>Estimated Cost</h3>
+
+<p>₹800 - ₹1500</p>
+
+<a class="btn" href="projects.html">← Back to Projects</a>
+
 </section>
+
+<footer>
+
+<h3>OpenProjectLab</h3>
+
+<p>Electronics • Arduino • Robotics • Mechatronics</p>
+
+<p>Created by Kapil</p>
+
+<p>© 2026 OpenProjectLab. All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>
