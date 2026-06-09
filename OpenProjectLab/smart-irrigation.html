@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Irrigation System - OpenProjectLab</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<h1>OpenProjectLab</h1>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="projects.html">Projects</a>
+</nav>
+
+</header>
+
+<section class="project-page">
+
+<h2>Smart Irrigation System</h2>
+
+<p>
+An automatic plant watering system that uses a soil moisture sensor to detect dry soil.
+</p>
+
+<h3>Components Required</h3>
+
+<ul>
+<li>Arduino Uno</li>
+<li>Soil Moisture Sensor</li>
+<li>Relay Module</li>
+<li>Water Pump</li>
+<li>Power Supply</li>
+<li>Jumper Wires</li>
+</ul>
+
+<h3>Connections</h3>
+
+<table>
+
+<tr>
+<th>Component</th>
+<th>Arduino Pin</th>
+</tr>
+
+<tr>
+<td>Soil Sensor AO</td>
+<td>A0</td>
+</tr>
+
+<tr>
+<td>Relay IN</td>
+<td>D8</td>
+</tr>
+
+<tr>
+<td>Relay VCC</td>
+<td>5V</td>
+</tr>
+
+<tr>
+<td>Relay GND</td>
+<td>GND</td>
+</tr>
+
+</table>
+
+<h3>Arduino Code</h3>
+
+<pre>
+int soilPin = A0;
+int relayPin = 8;
+
+void setup() {
+
+pinMode(relayPin, OUTPUT);
+
+Serial.begin(9600);
+
+}
+
+void loop() {
+
+int moisture = analogRead(soilPin);
+
+Serial.println(moisture);
+
+if(moisture > 600){
+
+digitalWrite(relayPin, HIGH);
+
+}
+else{
+
+digitalWrite(relayPin, LOW);
+
+}
+
+delay(1000);
+
+}
+</pre>
+
+<h3>Estimated Cost</h3>
+
+<p>₹500 - ₹1200</p>
+
+<a class="btn" href="projects.html">← Back to Projects</a>
+
+</section>
+
+<footer>
+<h3>OpenProjectLab</h3>
+<p>Created by Kapil</p>
+<p>© 2026 OpenProjectLab. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
