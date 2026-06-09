@@ -1,6 +1,10 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OpenProjectLab</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -8,6 +12,7 @@
 <body>
 
 <header>
+
 <div class="logo">
 <h1>OpenProjectLab</h1>
 <p>Created by Kapil</p>
@@ -23,9 +28,24 @@
 <li><a href="contact.html">Contact</a></li>
 </ul>
 </nav>
+
 </header>
 
-<!-- SEARCH + VOICE -->
+<section class="hero">
+
+<h2>Free Electronics, Arduino & Robotics Projects</h2>
+
+<p>
+Explore Arduino, Robotics, IoT and Mechatronics projects with source code,
+components, wiring connections and tutorials.
+</p>
+
+<br>
+
+<a class="btn" href="projects.html">Browse Projects</a>
+
+</section>
+
 <div class="search-box">
 <input type="text" id="search" placeholder="Search projects...">
 <button class="mic-btn" onclick="startVoice()">🎤</button>
@@ -35,51 +55,107 @@
 
 <div class="card">
 <h3>Smart Dustbin</h3>
+<p>Automatic dustbin using ultrasonic sensing.</p>
 <a class="btn" href="smart-dustbin.html">Open</a>
 </div>
 
 <div class="card">
 <h3>Weather Station</h3>
+<p>Monitor temperature and humidity in real time.</p>
 <a class="btn" href="weather-station.html">Open</a>
 </div>
 
 <div class="card">
 <h3>Robot Arm</h3>
+<p>Servo controlled robotic arm project.</p>
 <a class="btn" href="robot-arm.html">Open</a>
 </div>
 
 <div class="card">
-<h3>Line Follower</h3>
+<h3>Line Follower Robot</h3>
+<p>Robot that follows a black line automatically.</p>
 <a class="btn" href="line-follower.html">Open</a>
+</div>
+
+<div class="card">
+<h3>Fire Alarm System</h3>
+<p>Fire detection using Arduino sensors.</p>
+<a class="btn" href="fire-alarm.html">Open</a>
 </div>
 
 </section>
 
-<!-- SEARCH SCRIPT -->
+<section class="about">
+
+<h2>About OpenProjectLab</h2>
+
+<p>
+OpenProjectLab is a free learning platform where students and makers
+can learn Arduino, Robotics, IoT and Mechatronics through practical projects.
+</p>
+
+<p>
+Every project contains components required, connection tables,
+Arduino code and estimated project cost.
+</p>
+
+</section>
+
+<footer>
+
+<h3>OpenProjectLab</h3>
+
+<p>Electronics • Arduino • Robotics • Mechatronics</p>
+
+<p>Created by Kapil</p>
+
+<p>© 2026 OpenProjectLab. All Rights Reserved.</p>
+
+</footer>
+
 <script>
+
 const search=document.getElementById("search");
+
 search.addEventListener("input",function(){
+
 let val=this.value.toLowerCase();
+
 document.querySelectorAll(".card").forEach(card=>{
-card.style.display=card.innerText.toLowerCase().includes(val)?"block":"none";
-});
+
+card.style.display=
+card.innerText.toLowerCase().includes(val)
+? "block"
+: "none";
+
 });
 
-/* VOICE SEARCH */
+});
+
 function startVoice(){
-let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+let recognition =
+new (window.SpeechRecognition ||
+window.webkitSpeechRecognition)();
+
 recognition.lang="en-US";
 
 recognition.start();
 
 recognition.onresult=function(event){
-let text = event.results[0][0].transcript;
+
+let text=event.results[0][0].transcript;
+
 document.getElementById("search").value=text;
 
 search.dispatchEvent(new Event("input"));
+
 };
+
 }
+
 </script>
 
 </body>
 </html>
+```
