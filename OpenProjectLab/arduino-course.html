@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Arduino Course - OpenProjectLab</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+
+<body>
+
+
+
+<header>
+
+
+
+<div class="logo">
+
+<h1>OpenProjectLab</h1>
+
+<p>Created by Kapil</p>
+
+</div>
+
+
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="projects.html">Projects</a></li>
+
+<li><a href="arduino-course.html">Arduino Course</a></li>
+
+<li><a href="arduino.html">Arduino</a></li>
+
+<li><a href="robotics.html">Robotics</a></li>
+
+<li><a href="mechatronics.html">Mechatronics</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+
+
+</header>
+
+
+
+<section class="project-page">
+
+
+
+<h2>Complete Arduino Course</h2>
+
+
+
+<p>
+
+Learn Arduino from beginner to advanced completely free.
+
+</p>
+
+
+
+<hr>
+
+
+
+<h2>Lesson 1: What is Arduino?</h2>
+
+
+
+<p>
+
+Arduino is an open-source electronics platform used for building interactive projects.
+
+It consists of programmable microcontroller boards and easy-to-use software called the Arduino IDE.
+
+</p>
+
+
+
+<h3>Why Arduino?</h3>
+
+
+
+<ul>
+
+<li>Easy for beginners</li>
+
+<li>Low cost</li>
+
+<li>Large community support</li>
+
+<li>Used in robotics, IoT and automation</li>
+
+<li>Supports many sensors and modules</li>
+
+</ul>
+
+
+
+<h3>Quick Notes</h3>
+
+
+
+<pre>
+
+Arduino = Hardware + Software
+
+
+
+Hardware:
+
+- Arduino Board
+
+
+
+Software:
+
+- Arduino IDE
+
+
+
+Uses:
+
+- Robotics
+
+- Home Automation
+
+- IoT
+
+- Smart Projects
+
+</pre>
+
+
+
+<hr>
+
+
+
+<h2>Lesson 2: History of Arduino</h2>
+
+
+
+<p>
+
+Arduino was created in Italy in 2005 to provide students with a simple and affordable platform for learning electronics and programming.
+
+</p>
+
+
+
+<h3>Interesting Facts</h3>
+
+
+
+<ul>
+
+<li>Started in 2005</li>
+
+<li>Created in Italy</li>
+
+<li>Open-source platform</li>
+
+<li>Millions of users worldwide</li>
+
+</ul>
+
+
+
+<pre>
+
+Founded: 2005
+
+Country: Italy
+
+Type: Open Source Electronics Platform
+
+</pre>
+
+
+
+<hr>
+
+
+
+<h2>Lesson 3: Arduino Uno Overview</h2>
+
+
+
+<p>
+
+The Arduino Uno is the most popular Arduino board for beginners.
+
+</p>
+
+
+
+<h3>Main Parts</h3>
+
+
+
+<ul>
+
+<li>ATmega328P Microcontroller</li>
+
+<li>USB Port</li>
+
+<li>Power Jack</li>
+
+<li>Digital Pins</li>
+
+<li>Analog Pins</li>
+
+<li>Reset Button</li>
+
+</ul>
+
+
+
+<pre>
+
+Arduino Uno Specifications
+
+
+
+Microcontroller:
+
+ATmega328P
+
+
+
+Operating Voltage:
+
+5V
+
+
+
+Digital Pins:
+
+14
+
+
+
+Analog Pins:
+
+6
+
+
+
+PWM Pins:
+
+6
+
+</pre>
+
+
+
+<hr>
+
+
+
+<h2>Lesson 4: Understanding Arduino Pins</h2>
+
+
+
+<h3>Digital Pins</h3>
+
+
+
+<p>
+
+Digital pins can be used as INPUT or OUTPUT.
+
+They only understand HIGH (5V) and LOW (0V).
+
+</p>
+
+
+
+<pre>
+
+Digital Pins:
+
+D0 - D13
+
+
+
+Examples:
+
+LED
+
+Button
+
+Relay
+
+Buzzer
+
+</pre>
+
+
+
+<h3>Analog Pins</h3>
+
+
+
+<p>
+
+Analog pins can read varying voltages from sensors.
+
+</p>
+
+
+
+<pre>
+
+Analog Pins:
+
+A0 - A5
+
+
+
+Examples:
+
+LDR
+
+Temperature Sensor
+
+Soil Moisture Sensor
+
+Joystick
+
+</pre>
+
+
+
+<h3>PWM Pins</h3>
+
+
+
+<p>
+
+PWM pins simulate analog output.
+
+</p>
+
+
+
+<pre>
+
+PWM Pins:
+
+3, 5, 6, 9, 10, 11
+
+
+
+Used For:
+
+LED Brightness
+
+Servo Control
+
+Motor Speed
+
+</pre>
+
+
+
+<hr>
+
+
+
+<h2>Lesson 5: First Arduino Program</h2>
+
+
+
+<p>
+
+The most famous Arduino program is Blink.
+
+</p>
+
+
+
+<pre>
+
+void setup() {
+
+
+
+pinMode(13, OUTPUT);
+
+
+
+}
+
+
+
+void loop() {
+
+
+
+digitalWrite(13, HIGH);
+
+delay(1000);
+
+
+
+digitalWrite(13, LOW);
+
+delay(1000);
+
+
+
+}
+
+</pre>
+
+
+
+<h3>Explanation</h3>
+
+
+
+<pre>
+
+pinMode()
+
+Sets pin mode.
+
+
+
+digitalWrite()
+
+Turns pin ON/OFF.
+
+
+
+delay()
+
+Waits for given time.
+
+</pre>
+
+
+
+<hr>
+
+
+
+<h2>Lesson 6: Sensors and Modules</h2>
+
+
+
+<h3>Popular Sensors</h3>
+
+
+
+<ul>
+
+<li>HC-SR04 Ultrasonic Sensor</li>
+
+<li>DHT11 Temperature Sensor</li>
+
+<li>LDR Light Sensor</li>
+
+<li>IR Sensor</li>
+
+<li>Flame Sensor</li>
+
+<li>Soil Moisture Sensor</li>
+
+</ul>
+
+
+
+<h3>Popular Modules</h3>
+
+
+
+<ul>
+
+<li>Relay Module</li>
+
+<li>Bluetooth Module HC-05</li>
+
+<li>ESP8266 WiFi Module</li>
+
+<li>LCD Display</li>
+
+<li>OLED Display</li>
+
+</ul>
+
+
+
+<hr>
+
+
+
+<h2>Lesson 7: What Should You Learn Next?</h2>
+
+
+
+<ol>
+
+<li>LED Control</li>
+
+<li>Buttons</li>
+
+<li>Buzzers</li>
+
+<li>LCD Displays</li>
+
+<li>Servo Motors</li>
+
+<li>Ultrasonic Sensors</li>
+
+<li>Motor Drivers</li>
+
+<li>ESP8266</li>
+
+<li>IoT Projects</li>
+
+<li>Robotics</li>
+
+</ol>
+
+
+
+<hr>
+
+
+
+<h2>Course Summary</h2>
+
+
+
+<pre>
+
+Arduino Learning Path
+
+
+
+1. Arduino Basics
+
+2. Pins
+
+3. LED Projects
+
+4. Sensors
+
+5. Motors
+
+6. Displays
+
+7. IoT
+
+8. Robotics
+
+9. Advanced Projects
+
+</pre>
+
+
+
+<a class="btn" href="arduino.html">
+
+Back to Arduino Section
+
+</a>
+
+
+
+</section>
+
+
+
+<footer>
+
+
+
+<h3>OpenProjectLab</h3>
+
+
+
+<p>
+
+Free Electronics, Robotics and Arduino Projects
+
+</p>
+
+
+
+<p>
+
+Created by Kapil
+
+</p>
+
+
+
+<p>
+
+© 2026 OpenProjectLab. All Rights Reserved.
+
+</p>
+
+
+
+</footer>
+
+
+
+</body>
+
+</html>
