@@ -1,41 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather Station - OpenProjectLab</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
 <header>
-<h1 class="project-title">Weather Station</h1>
+
+<h1>OpenProjectLab</h1>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="projects.html">Projects</a>
+</nav>
+
 </header>
 
-<section class="section">
-<h3>📦 Components</h3>
+<section class="project-page">
+
+<h2>Weather Station Project</h2>
+
+<p>
+Monitor temperature and humidity using a DHT11 sensor and Arduino.
+</p>
+
+<h3>Components Required</h3>
+
 <ul>
-<li>ESP8266</li>
+<li>Arduino Uno</li>
 <li>DHT11 Sensor</li>
+<li>16x2 LCD Display (Optional)</li>
+<li>Breadboard</li>
 <li>Jumper Wires</li>
 </ul>
-</section>
 
-<section class="section">
-<h3>🔌 Connections</h3>
+<h3>Connections</h3>
+
 <table>
-<tr><th>Component</th><th>Pin</th></tr>
-<tr><td>DHT11 Data</td><td>D4</td></tr>
-<tr><td>VCC</td><td>3.3V</td></tr>
-<tr><td>GND</td><td>GND</td></tr>
-</table>
-</section>
+<tr>
+<th>Component</th>
+<th>Arduino Pin</th>
+</tr>
 
-<section class="section">
-<h3>💻 Code</h3>
+<tr>
+<td>DHT11 Data</td>
+<td>D2</td>
+</tr>
+
+<tr>
+<td>VCC</td>
+<td>5V</td>
+</tr>
+
+<tr>
+<td>GND</td>
+<td>GND</td>
+</tr>
+
+</table>
+
+<h3>Arduino Code</h3>
+
 <pre>
 #include <DHT.h>
 
-DHT dht(D4, DHT11);
+#define DHTPIN 2
+#define DHTTYPE DHT11
 
-void setup(){
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+
 Serial.begin(9600);
 dht.begin();
+
 }
 
-void loop(){
-Serial.println(dht.readTemperature());
+void loop() {
+
+float temp = dht.readTemperature();
+float hum = dht.readHumidity();
+
+Serial.print("Temperature: ");
+Serial.print(temp);
+Serial.println(" C");
+
+Serial.print("Humidity: ");
+Serial.print(hum);
+Serial.println(" %");
+
 delay(2000);
+
 }
 </pre>
+
+<h3>Estimated Cost</h3>
+
+<p>₹300 - ₹700</p>
+
+<a class="btn" href="projects.html">← Back to Projects</a>
+
 </section>
+
+<footer>
+
+<h3>OpenProjectLab</h3>
+
+<p>Created by Kapil</p>
+
+<p>© 2026 OpenProjectLab. All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>
