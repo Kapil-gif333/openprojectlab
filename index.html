@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fire Alarm System - OpenProjectLab</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<h1>OpenProjectLab</h1>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="projects.html">Projects</a>
+</nav>
+
+</header>
+
+<section class="project-page">
+
+<h2>Fire Alarm System</h2>
+
+<p>
+A simple fire alarm system using a flame sensor and buzzer to detect fire.
+</p>
+
+<h3>Components Required</h3>
+
+<ul>
+<li>Arduino Uno</li>
+<li>Flame Sensor Module</li>
+<li>Piezo Buzzer</li>
+<li>LED</li>
+<li>220Ω Resistor</li>
+<li>Jumper Wires</li>
+</ul>
+
+<h3>Connections</h3>
+
+<table>
+
+<tr>
+<th>Component</th>
+<th>Arduino Pin</th>
+</tr>
+
+<tr>
+<td>Flame Sensor OUT</td>
+<td>D2</td>
+</tr>
+
+<tr>
+<td>Buzzer</td>
+<td>D8</td>
+</tr>
+
+<tr>
+<td>LED</td>
+<td>D13</td>
+</tr>
+
+</table>
+
+<h3>Arduino Code</h3>
+
+<pre>
+int flameSensor = 2;
+int buzzer = 8;
+int led = 13;
+
+void setup() {
+
+pinMode(flameSensor, INPUT);
+pinMode(buzzer, OUTPUT);
+pinMode(led, OUTPUT);
+
+}
+
+void loop() {
+
+int fire = digitalRead(flameSensor);
+
+if(fire == LOW){
+
+digitalWrite(buzzer, HIGH);
+digitalWrite(led, HIGH);
+
+}
+else{
+
+digitalWrite(buzzer, LOW);
+digitalWrite(led, LOW);
+
+}
+
+delay(100);
+
+}
+</pre>
+
+<h3>Estimated Cost</h3>
+
+<p>₹250 - ₹600</p>
+
+<a class="btn" href="projects.html">← Back to Projects</a>
+
+</section>
+
+<footer>
+
+<h3>OpenProjectLab</h3>
+
+<p>Electronics • Arduino • Robotics • Mechatronics</p>
+
+<p>Created by Kapil</p>
+
+<p>© 2026 OpenProjectLab. All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robot Arm - OpenProjectLab</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<h1>OpenProjectLab</h1>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="projects.html">Projects</a>
+</nav>
+
+</header>
+
+<section class="project-page">
+
+<h2>Robot Arm Project</h2>
+
+<p>
+A simple servo-based robot arm controlled by Arduino.
+</p>
+
+<h3>Components Required</h3>
+
+<ul>
+<li>Arduino Uno</li>
+<li>2 x SG90 Servo Motors</li>
+<li>Robot Arm Kit</li>
+<li>Jumper Wires</li>
+<li>External Power Supply</li>
+</ul>
+
+<h3>Connections</h3>
+
+<table>
+
+<tr>
+<th>Component</th>
+<th>Arduino Pin</th>
+</tr>
+
+<tr>
+<td>Base Servo</td>
+<td>D9</td>
+</tr>
+
+<tr>
+<td>Arm Servo</td>
+<td>D10</td>
+</tr>
+
+<tr>
+<td>Servo VCC</td>
+<td>5V</td>
+</tr>
+
+<tr>
+<td>Servo GND</td>
+<td>GND</td>
+</tr>
+
+</table>
+
+<h3>Arduino Code</h3>
+
+<pre>
+#include <Servo.h>
+
+Servo baseServo;
+Servo armServo;
+
+void setup() {
+
+baseServo.attach(9);
+armServo.attach(10);
+
+}
+
+void loop() {
+
+baseServo.write(0);
+armServo.write(0);
+
+delay(1000);
+
+baseServo.write(90);
+armServo.write(90);
+
+delay(1000);
+
+baseServo.write(180);
+armServo.write(180);
+
+delay(1000);
+
+}
+</pre>
+
+<h3>Estimated Cost</h3>
+
+<p>₹700 - ₹1500</p>
+
+<a class="btn" href="projects.html">← Back to Projects</a>
+
+</section>
+
+<footer>
+
+<h3>OpenProjectLab</h3>
+
+<p>Created by Kapil</p>
+
+<p>© 2026 OpenProjectLab. All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>

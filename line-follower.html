@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Automation - OpenProjectLab</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<h1>OpenProjectLab</h1>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="projects.html">Projects</a>
+</nav>
+
+</header>
+
+<section class="project-page">
+
+<h2>Home Automation System</h2>
+
+<p>
+Control home appliances using Arduino and relay modules.
+</p>
+
+<h3>Components Required</h3>
+
+<ul>
+<li>Arduino Uno</li>
+<li>4 Channel Relay Module</li>
+<li>LEDs (for demonstration)</li>
+<li>Jumper Wires</li>
+<li>Power Supply</li>
+</ul>
+
+<h3>Connections</h3>
+
+<table>
+
+<tr>
+<th>Component</th>
+<th>Arduino Pin</th>
+</tr>
+
+<tr>
+<td>Relay 1</td>
+<td>D2</td>
+</tr>
+
+<tr>
+<td>Relay 2</td>
+<td>D3</td>
+</tr>
+
+<tr>
+<td>Relay 3</td>
+<td>D4</td>
+</tr>
+
+<tr>
+<td>Relay 4</td>
+<td>D5</td>
+</tr>
+
+</table>
+
+<h3>Arduino Code</h3>
+
+<pre>
+int relay1 = 2;
+
+void setup() {
+
+pinMode(relay1, OUTPUT);
+
+}
+
+void loop() {
+
+digitalWrite(relay1, HIGH);
+delay(2000);
+
+digitalWrite(relay1, LOW);
+delay(2000);
+
+}
+</pre>
+
+<h3>Estimated Cost</h3>
+
+<p>₹600 - ₹1500</p>
+
+<a class="btn" href="projects.html">← Back to Projects</a>
+
+</section>
+
+<footer>
+
+<h3>OpenProjectLab</h3>
+
+<p>Created by Kapil</p>
+
+<p>© 2026 OpenProjectLab. All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>
