@@ -358,3 +358,5 @@ pre {
 }
 .code-animation-line {
   border-right: 2px solid var(--accent-blue);
+  white-space: nowrap;
+  display: inline-block;
