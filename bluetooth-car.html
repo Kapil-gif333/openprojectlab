@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Irrigation System - OpenProjectLab</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>OpenProjectLab</h1>
+            <p>Created by Kapil</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../projects.html">Back to Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="project-page">
+        <h2>💧 Smart Plant Irrigation System</h2>
+        <p style="color: var(--text-muted); margin-bottom: 25px;">An automatic agricultural loop monitoring soil hydration levels via an analog soil probe and triggering a submersible water pump when fields dry up.</p>
+
+        <div class="media-grid" style="grid-template-columns: 1fr;">
+            <div class="download-box">
+                <h3>Direct Project Asset Packages</h3>
+                <p style="font-size: 13px; color: var(--text-muted);">One-click direct copyable code configurations and hardware assets.</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+                    <a href="#" class="download-btn"><span>📥 Download Sketch (.ino)</span></a>
+                    <a href="#" class="download-btn"><span>🖼️ Wiring Diagram Layout</span></a>
+                    <a href="#" class="download-btn"><span>📋 Components Inventory List</span></a>
+                    <a href="#" class="download-btn"><span>📓 Lab Documentation PDF</span></a>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h3>Required Components & Estimated Costs</h3>
+            <ul>
+                <li><strong>Arduino Uno Core Board System</strong></li>
+                <li><strong>Soil Moisture Sensor Probe Module</strong></li>
+                <li><strong>5V Logic Isolated Relay Channel Board</strong></li>
+                <li><strong>5V Mini Submersible Water Pump & Water Tubing</strong></li>
+                <li><strong>Estimated Budget:</strong> ₹400 - ₹700</li>
+            </ul>
+        </section>
+
+        <section style="margin-top: 25px;">
+            <h3>Circuit Connection Reference Table</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component Node Pinout</th>
+                        <th>Target Development Pin</th>
+                        <th>Operational Routing Function</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Soil Moisture Sensor Analog Out (AO)</td>
+                        <td>Analog Input Pin A0</td>
+                        <td>Reads raw electrical earth resistance parameters</td>
+                    </tr>
+                    <tr>
+                        <td>5V Relay Signal Input Pin (IN)</td>
+                        <td>Digital Pin 7</td>
+                        <td>Triggers relay contacts to connect external pump power lines</td>
+                    </tr>
+                    <tr>
+                        <td>Mini Submersible Pump Ground Wire</td>
+                        <td>GND Power Terminal</td>
+                        <td>Closes the power circuit loop line for motor driving</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section style="margin-top: 25px;">
+            <h3>🛠️ Step-by-Step Construction Guide</h3>
+            <ol style="padding-left: 20px; color: var(--text-light); line-height: 1.8;">
+                <li>Push the two-pronged soil moisture probe firmly into your target plant monitoring earth block base.</li>
+                <li>Connect the probe controller board analog output pin over to analog input pin A0 on your Arduino.</li>
+                <li>Cut the positive wire of your water pump and route it through the Normally Open (NO) and Common (COM) pins of your relay.</li>
+                <li>Connect the relay signal trigger wire directly to digital pin 7 on your board.</li>
+                <li>Set up a test threshold index inside your code script, place the sensor in dry soil, and check if the water pump kicks on automatically.</li>
+            </ol>
+        </section>
+
+        <section style="margin-top: 25px;">
+            <h3>Monospaced Arduino Source Sketch</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 10px;">Select and copy this clean text layout straight into your compiler terminal workspace.</p>
+            <div class="code-container">
+                <pre><code><span class="code-animation-line">const int soilSensorPin = A0;</span>
+const int relayControlPin = 7;
+int moistureValue = 0;
+int dryThreshold = 700; // Calibrate this value based on your soil type
+
+void setup() {
+  pinMode(relayControlPin, OUTPUT);
+  digitalWrite(relayControlPin, HIGH); // Keeps pump closed by default
+  Serial.begin(9600);
+}
+
+void loop() {
+  moistureValue = analogRead(soilSensorPin);
+  Serial.print("Soil Moisture Value Tracker: ");
+  Serial.println(moistureValue);
+  
+  if (moistureValue > dryThreshold) { 
+    // Higher resistance values mean dry conditions are met
+    digitalWrite(relayControlPin, LOW);  // Turn on water pump module
+  } else {
+    digitalWrite(relayControlPin, HIGH); // Shut down water pump module
+  }
+  delay(1000); // Check soil moisture balance levels every second
+}</code></pre>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 OpenProjectLab | Created by Kapil</p>
+    </footer>
+
+</body>
+</html>
+
