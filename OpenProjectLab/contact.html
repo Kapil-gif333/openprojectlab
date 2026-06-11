@@ -1,42 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - OpenProjectLab</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-<h1>Contact Me</h1>
+    <header>
+        <div class="logo">
+            <h1>OpenProjectLab</h1>
+            <p>Created by Kapil</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="arduino-course.html">Arduino Course</a></li>
+                <li><a href="request-project.html">Request Code</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="arduino.html">Arduino</a></li>
-<li><a href="robotics.html">Robotics</a></li>
-<li><a href="mechatronics.html">Mechatronics</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-</header>
+    <main class="project-page" style="max-width: 650px; margin: 40px auto; text-align: center;">
+        <h2>📬 Get In Touch System</h2>
+        <p style="color: var(--text-muted); margin-bottom: 30px;">Are you a YouTube content creator looking to host your project assets? Send us a direct dispatch notice.</p>
 
-<section>
+        <form action="https://formsubmit.co" method="POST" style="text-align: left;">
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="_captcha" value="true">
 
-<h2>Get in Touch</h2>
+            <div class="form-group">
+                <label for="contactname">Full Name</label>
+                <input type="text" id="contactname" name="sender-name" placeholder="Enter your full name..." required>
+            </div>
 
-<p>Email: openprojectlab@gmail.com</p>
+            <div class="form-group">
+                <label for="contactemail">Email Address</label>
+                <input type="email" id="contactemail" name="sender-email" placeholder="name@example.com" required>
+            </div>
 
-<p>GitHub: Kapil-gif333</p>
+            <div class="form-group">
+                <label for="messagebody">Message Content Text</label>
+                <textarea id="messagebody" name="message" rows="5" placeholder="Write your core questions or partnership offers here..." required></textarea>
+            </div>
 
-<br>
+            <button type="submit" class="btn" style="border: none; cursor: pointer; width: 100%; padding: 14px;">✉️ Send Secure Message</button>
+        </form>
+    </main>
 
-<p> BY Kapil </p>
-
-</section>
+    <!-- Synchronized Copyright and Licensing Footer Elements -->
+    <footer>
+        <h3>OpenProjectLab</h3>
+        <p>Free Electronics, Robotics and Arduino Projects</p>
+        <p>Created by Kapil</p>
+        <p>&copy; 2026 OpenProjectLab. All Rights Reserved. &bull; Licensed under GNU General Public License v3.0</p>
+    </footer>
 
 </body>
 </html>
