@@ -4,8 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - OpenProjectLab</title>
+    <title>OpenProjectLab</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://cloudflareinsights.com"
+        data-cf-beacon='{"token":"23fb3430121e4e9a87564d6eefa02691"}'></script>
+    <!-- End Cloudflare Web Analytics -->
 </head>
 
 <body>
@@ -21,216 +26,63 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="arduino-course.html">Arduino Course</a></li>
-                <li><a href="arduino.html">Arduino</a></li>
-                <li><a href="robotics.html">Robotics</a></li>
-                <li><a href="mechatronics.html">Mechatronics</a></li>
-                <li><a href="ai-projects.html">AI Corner</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li><a href="request-project.html">Request Code</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero reveal">
-        <h2>Project Library</h2>
-        <p>Explore Arduino, Robotics, IoT and Mechatronics projects.</p>
+        <h2>Free Electronics, Arduino & Robotics Projects</h2>
+        <p>
+            Explore Arduino, Robotics, IoT and Mechatronics projects with source code,
+            components, wiring connections and tutorials.
+        </p>
+        <br>
+        <a class="btn" href="projects.html">Browse Projects Library</a>
     </section>
 
-    <div class="search-box reveal">
-        <input type="text" id="search" placeholder="Search project library...">
-    </div>
+    <!-- HIGHLIGHTED FEATURES BASEBOARD GRID -->
+    <section class="about reveal">
+        <h2>🚀 Built Specially for Creators & Electronics Students</h2>
+        <p>
+            Are you tired of hunting through YouTube description text sections for broken code links? 
+            OpenProjectLab gathers everything on one screen. Get instant access to clean source code, 
+            exact wiring pin connections, and full engineering steps completely on-screen.
+        </p>
+    </section>
 
-    <!-- MAIN INTERCONNECTED 30-PROJECT DIRECTORY GRID -->
-    <section class="cards" id="projectList">
-
-        <!-- 0. Main Foundation Course -->
-        <div class="card reveal">
-            <h3>📘 Complete Arduino Course</h3>
-            <p>Learn Arduino hardware fundamentals from beginner to advanced steps.</p>
-            <a class="btn" href="arduino-course.html">Start Course</a>
+    <!-- CORE INTERACTION ROADMAP PANEL -->
+    <section class="about reveal" style="background: #0f172a; padding: 40px 20px; border-radius: 15px; border: 1px solid #1e293b;">
+        <h2 style="margin-bottom: 15px;">🗺️ Recommended Arduino Core Roadmap</h2>
+        <div style="text-align: left; max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 12px; color: #cbd5e1;">
+            <div><strong>🟢 Step 1: Fundamentals</strong> — Understand lines, blink loops, and basic electronic theory layouts.</div>
+            <div><strong>🟡 Step 2: Sensor Networks</strong> — Connect ultrasonic proximity pins, LDRs, and DHT climate sensors.</div>
+            <div><strong>🟡 Step 3: Actuation</strong> — Drive heavy mechanical servos and DC motor driver shield gears.</div>
+            <div><strong>🔴 Step 4: Network IoT</strong> — Link web server endpoints via ESP8266 Wi-Fi transceivers.</div>
         </div>
+    </section>
 
-        <!-- 1. Smart Dustbin -->
-        <div class="card reveal">
-            <h3>🗑 Smart Dustbin</h3>
-            <p>Automatic dustbin using an ultrasonic proximity sensor and mini servo motor.</p>
-            <a class="btn" href="smart-dustbin.html">Open Project</a>
-        </div>
+    <footer>
+        <h3>OpenProjectLab</h3>
+        <p>Electronics • Arduino • Robotics • Mechatronics</p>
+        <p>Created by Kapil</p>
+        <p>© 2026 OpenProjectLab. All Rights Reserved. &bull; Licensed under GNU GPL v3.0</p>
+    </footer>
 
-        <!-- 2. Weather Station -->
-        <div class="card reveal">
-            <h3>🌦 Weather Station</h3>
-            <p>Monitor temperature, humidity, and heat index values in real time over Wi-Fi.</p>
-            <a class="btn" href="weather-station.html">Open Project</a>
-        </div>
+    <!-- ROOT ENGINE SCRIPTS -->
+    <script>
+        // Scroll reveal display observer engine execution hook
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add("visible");
+                    io.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+    </script>
 
-        <!-- 3. Robot Arm -->
-        <div class="card reveal">
-            <h3>🤖 Robot Arm</h3>
-            <p>Multi-axis potentiometer and servo motor-controlled mechanical robot arm.</p>
-            <a class="btn" href="robot-arm.html">Open Project</a>
-        </div>
-
-        <!-- 4. Line Follower Robot -->
-        <div class="card reveal">
-            <h3>🚗 Line Follower Robot</h3>
-            <p>Autonomous mobile vehicular platform that tracks black tracks using IR arrays.</p>
-            <a class="btn" href="line-follower.html">Open Project</a>
-        </div>
-
-        <!-- 5. Fire Alarm System -->
-        <div class="card reveal">
-            <h3>🔥 Fire Alarm System</h3>
-            <p>Automated fire and flame wavelength detection using sound buzzers.</p>
-            <a class="btn" href="fire-alarm.html">Open Project</a>
-        </div>
-
-        <!-- 6. Obstacle Avoiding Robot -->
-        <div class="card reveal">
-            <h3>🚧 Obstacle Avoiding Robot</h3>
-            <p>Self-driving smart rover vehicle that steers around objects dynamically.</p>
-            <a class="btn" href="obstacle-avoiding-robot.html">Open Project</a>
-        </div>
-
-        <!-- 7. Smart Irrigation System -->
-        <div class="card reveal">
-            <h3>💧 Smart Irrigation System</h3>
-            <p>Automatic field plant watering circuit driven by live soil moisture value sensors.</p>
-            <a class="btn" href="smart-irrigation.html">Open Project</a>
-        </div>
-
-        <!-- 8. Home Automation -->
-        <div class="card reveal">
-            <h3>🏠 Home Automation</h3>
-            <p>Control high-voltage household electrical appliances via safe isolated relay links.</p>
-            <a class="btn" href="home-automation.html">Open Project</a>
-        </div>
-
-        <!-- 9. Smart Door Lock -->
-        <div class="card reveal">
-            <h3>🔐 Smart Door Lock</h3>
-            <p>Secure matrix keypad password-based lock system with status indicators.</p>
-            <a class="btn" href="smart-door-lock.html">Open Project</a>
-        </div>
-
-        <!-- 10. Bluetooth Controlled Car -->
-        <div class="card reveal">
-            <h3>📱 Bluetooth Controlled Car</h3>
-            <p>Remote wireless smartphone driving platform matching HC-05 transceiver setups.</p>
-            <a class="btn" href="bluetooth-car.html">Open Project</a>
-        </div>
-
-        <!-- 11. Micro-Radar Sonar Map System -->
-        <div class="card reveal">
-            <h3>📡 Micro-Radar Sonar System</h3>
-            <p>Plots 180-degree physical sonar map layouts tracking spatial object vectors.</p>
-            <a class="btn" href="arduino-radar.html">Open Project</a>
-        </div>
-
-        <!-- 12. RFID Keycard Door Lock Access -->
-        <div class="card reveal">
-            <h3>💳 RFID Door Lock Access</h3>
-            <p>Contactless security lock mechanism utilizing RC522 scanning cards.</p>
-            <a class="btn" href="rfid-door-lock.html">Open Project</a>
-        </div>
-
-        <!-- 13. Real-Time I2C LCD Clock -->
-        <div class="card reveal">
-            <h3>⏰ Real-Time I2C LCD Clock</h3>
-            <p>Accurate crystal clock timekeeping circuit tracking numerical calendar metrics.</p>
-            <a class="btn" href="i2c-digital-clock.html">Open Project</a>
-        </div>
-
-        <!-- 14. Water Tank Overflow Monitor -->
-        <div class="card reveal">
-            <h3>🚰 Water Tank Overflow Monitor</h3>
-            <p>Calculates fluid levels to output warning signals before tank spill accidents.</p>
-            <a class="btn" href="water-level-indicator.html">Open Project</a>
-        </div>
-
-        <!-- 15. 8-Key Arduino Electronic Piano -->
-        <div class="card reveal">
-            <h3>🎹 Arduino Electronic Piano</h3>
-            <p>Generates musical notes frequencies through an audio piezo sound buzzer block.</p>
-            <a class="btn" href="arduino-piano.html">Open Project</a>
-        </div>
-
-        <!-- 16. DTMF Cellular Household Relay -->
-        <div class="card reveal">
-            <h3>📞 DTMF Cellular Home Relay</h3>
-            <p>Triggers remote power grids worldwide via telephone sound tone commands.</p>
-            <a class="btn" href="dtmf-home-control.html">Open Project</a>
-        </div>
-
-        <!-- 17. Room Visitor Bidirectional Counter -->
-        <div class="card reveal">
-            <h3>👥 Room Visitor Counter</h3>
-            <p>Counts doorway entries and shuts down room lighting loads automatically when empty.</p>
-            <a class="btn" href="visitor-counter.html">Open Project</a>
-        </div>
-
-        <!-- 18. Hand Gesture Controlled Car -->
-        <div class="card reveal">
-            <h3>🖐 Hand Gesture Controlled Car</h3>
-            <p>Wireless driving robot controlled by mapping hand motions with an accelerometer.</p>
-            <a class="btn" href="gesture-controlled-car.html">Open Project</a>
-        </div>
-
-        <!-- 19. Wi-Fi Smartphone Node Rover -->
-        <div class="card reveal">
-            <h3>🌐 Wi-Fi Smartphone Node Rover</h3>
-            <p>Hosts internal browser dashboards allowing real-time touch steering wheels.</p>
-            <a class="btn" href="wifi-node-rover.html">Open Project</a>
-        </div>
-
-        <!-- 20. ThingSpeak IoT Weather Streamer -->
-        <div class="card reveal">
-            <h3>📊 ThingSpeak IoT Weather</h3>
-            <p>Uploads localized sensor values directly into cloud server graph visualizers.</p>
-            <a class="btn" href="thingspeak-weather.html">Open Project</a>
-        </div>
-
-        <!-- 21. Single-Axis Sun Tracker Mount -->
-        <div class="card reveal">
-            <h3>☀️ Single-Axis Sun Tracker</h3>
-            <p>Rotates solar cells autonomously toward light using twin directional LDR sensors.</p>
-            <a class="btn" href="solar-tracker.html">Open Project</a>
-        </div>
-
-        <!-- 22. MQ2 Gas & Smoke Interceptor -->
-        <div class="card reveal">
-            <h3>💨 MQ2 Gas & Smoke Interceptor</h3>
-            <p>Triggers alarms upon reading hazardous gas particles or leak concentrations.</p>
-            <a class="btn" href="gas-detector.html">Open Project</a>
-        </div>
-
-        <!-- 23. Laser Perimeter Security Ring -->
-        <div class="card reveal">
-            <h3>⚡ Laser Perimeter Security</h3>
-            <p>Perimeter tripwire security array that sounds a alarm when laser grids are broken.</p>
-            <a class="btn" href="laser-tripwire.html">Open Project</a>
-        </div>
-
-        <!-- 24. Color Sorting Conveyor Rig -->
-        <div class="card reveal">
-            <h3>🎨 Color Sorting Conveyor Rig</h3>
-            <p>Sorts raw physical blocks using a TCS3200 color wavelength camera node.</p>
-            <a class="btn" href="color-sorter.html">Open Project</a>
-        </div>
-
-        <!-- 25. Ultrasonic OLED Rangefinder -->
-        <div class="card reveal">
-            <h3>📐 Ultrasonic OLED Rangefinder</h3>
-            <p>Precise digital ruler mapping spatial distances onto low-draw display nodes.</p>
-            <a class="btn" href="digital-rangefinder.html">Open Project</a>
-        </div>
-
-        <!-- 26. Haptic Smart Proximity Cap -->
-        <div class="card reveal">
-            <h3>🧢 Haptic Smart Proximity Cap</h3>
-            <p>Blind assistance hat framework outputting vibrational alerts near wall borders.</p>
-            <a class="btn" href="smart-blind-hat.html">Open Project</a>
-        </div>
-
-        <!-- 27. Voice Activated Appliance Array -->
-        <div class="card reveal">
-            <h3>🗣 Voice Activated Appliance Array</h3>
+</body>
+</html>
